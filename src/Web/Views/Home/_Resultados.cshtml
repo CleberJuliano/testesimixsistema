@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Historias.Dtos.ResultadoProcessadoDto>
+<div class="card mb-3">
+    <div class="card-body bg-light">
+        <div class="row">
+            <div class="col">
+                <p class="font-weight-bold">Legendas</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 text-center">
+                <div class="card mb-1 bg-primary">
+                    <div class="card-body p-0">
+                        <p class="mb-0">X</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11">
+                <p>Números divisíveis por 3</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 text-center">
+                <div class="card mb-1 bg-secondary">
+                    <div class="card-body p-0">
+                        <p class="mb-0">Y</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11">
+                <p>Números divisíveis por 5</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 text-center">
+                <div class="card mb-1 bg-danger">
+                    <div class="card-body p-0">
+                        <p class="mb-0">Z</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11">
+                <p>Números divisíveis por 3 e 5</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-1 text-center">
+            <div class="card mb-1">
+                <div class="card-body p-0 @item.ColorirBox()">
+                    <p class="mb-0">@Html.DisplayFor(x => item.Valor)</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="row mt-5">
+    <div class="col form-group text-center">
+        <button type="button" class="btn btn-warning limparResultados">Limpar Resultados</button>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Historias.Dtos.ResultadoProcessadoDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <p>Clique abaixo para calcular.</p>
+</div>
+
+<div class="row">
+    <div class="col form-group text-center">
+        <button type="button" class="btn btn-success exibirResultados" data-action="@Url.Action("ExibirResultados")">Calcular</button>
+    </div>
+</div>
+
+<div id="resultados">
+    @if (Model != null && Model.Any())
+    {
+        <partial name="_Resultados" />
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/exibirResultados.js"></script>
+    <script src="~/js/limparResultados.js"></script>
+}
